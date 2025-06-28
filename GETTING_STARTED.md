@@ -6,6 +6,9 @@ Your Alpha Vantage API key is already configured! Let's get the application runn
 
 ### Step 1: Configure Environment
 ```bash
+# Set your API key
+export ALPHA_VANTAGE_API_KEY="your-api-key-here"
+
 # This will create .env with your Alpha Vantage key
 ./configure-env.sh
 ```
@@ -38,7 +41,7 @@ docker-compose up -d
 ### ✅ Multiple Data Sources Ready
 The application is configured to use multiple free data sources:
 
-1. **Alpha Vantage** ✅ (Your key: N0ZZDWWJO60V0SMV)
+1. **Alpha Vantage** ✅ (Configured via environment variable)
 2. **IEX Cloud** ⚠️ (Free tier available)
 3. **Polygon.io** ⚠️ (Free tier available)
 4. **Finnhub** ⚠️ (Free tier available)
