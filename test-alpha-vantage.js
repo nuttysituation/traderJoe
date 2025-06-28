@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+// NOTE: No secrets are present in this script. API key must be provided via environment variable.
 const https = require('https');
 
 // Get Alpha Vantage API key from environment variable
@@ -10,14 +11,16 @@ const SYMBOL = 'AAPL';
 if (!API_KEY) {
     console.log('❌ ERROR: ALPHA_VANTAGE_API_KEY environment variable not set');
     console.log('   Please set your Alpha Vantage API key:');
-    console.log('   export ALPHA_VANTAGE_API_KEY="your-api-key-here"');
+    console.log('   export ALPHA_VANTAGE_API_KEY="<your-key>"');
     console.log('   Get a free API key at: https://www.alphavantage.co/support/#api-key');
     process.exit(1);
 }
 
+const MASKED_KEY = API_KEY.substring(0, 2) + '****' + API_KEY.slice(-2);
+
 console.log('🧪 Testing Alpha Vantage API...');
 console.log(`📊 Testing stock symbol: ${SYMBOL}`);
-console.log(`🔑 Using API key: ${API_KEY.substring(0, 4)}****`);
+console.log(`🔑 Using API key: ${MASKED_KEY}`);
 console.log('');
 
 // Make API request
