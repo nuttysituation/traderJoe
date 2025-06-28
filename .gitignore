@@ -9,6 +9,16 @@ node_modules/
 .env.local
 .env.production
 env.production
+*.env
+
+# API Keys and Secrets (CRITICAL - Never commit)
+*api*key*
+*api_key*
+*secret*
+*token*
+*password*
+*credential*
+*private*
 
 # SSL Certificates and Keys
 *.key

@@ -1,12 +1,21 @@
 #!/bin/bash
 
 # Alpha Vantage API Test Script
-API_KEY="N0ZZDWWJO60V0SMV"
+API_KEY="${ALPHA_VANTAGE_API_KEY:-}"
 SYMBOL="AAPL"
+
+# Check if API key is provided
+if [ -z "$API_KEY" ]; then
+    echo "❌ ERROR: ALPHA_VANTAGE_API_KEY environment variable not set"
+    echo "   Please set your Alpha Vantage API key:"
+    echo "   export ALPHA_VANTAGE_API_KEY='your-api-key-here'"
+    echo "   Get a free API key at: https://www.alphavantage.co/support/#api-key"
+    exit 1
+fi
 
 echo "🧪 Testing Alpha Vantage API..."
 echo "📊 Testing stock symbol: $SYMBOL"
-echo "🔑 Using API key: $API_KEY"
+echo "🔑 Using API key: ${API_KEY:0:4}****"
 echo ""
 
 # Test the API
