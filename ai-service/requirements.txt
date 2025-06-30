@@ -10,6 +10,6 @@ nltk==3.8.1  # CVE-2024-39705: No patched release as of 2024-06
 python-dotenv==1.0.0
 pydantic==2.5.0
 transformers==4.36.2
-torch==2.1.2
+torch==2.7.1
 sentence-transformers==2.2.2
 urllib3==2.2.1  # CVE-2025-50181, CVE-2025-50182, CVE-2024-37891: Patched in 2.2.1 
